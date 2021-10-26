@@ -1,0 +1,51 @@
+<JoystickScreen>:
+    #: import time __main__.time
+    name: 'main'
+    joystick_pressed: joystick_pressed
+    joystick_x: joystick_x
+    joystick_y: joystick_y
+    on_enter:root.start_joy_thread()
+
+    FloatLayout:
+        size_hint: None, None
+
+    Label:
+        id: joystick_pressed
+        size_hint: None, None
+        font_size: 30
+        text: "Not pressed"
+        center_x: root.width * .1
+        center_y: root.width * .1
+        color: 0, 0, 0, 1
+
+    Label:
+        id: joystick_x
+        text: "0"
+        size_hint: None, None
+        font_size: 30
+        center_x: root.width * .45
+        center_y: root.width * .45
+        color: 0, 0, 0, 1
+        bold: False
+        outline_width: self.font_size * 0.1
+        outline_color: 0, 0, 0
+
+    Label:
+        id: joystick_y
+        text: "0"
+        size_hint: None, None
+        font_size: 30
+        center_x: root.width * .45
+        center_y: root.width * .45
+        color: 0, 0, 0, 1
+        bold: False
+        outline_width: self.font_size * 0.1
+        outline_color: 0, 0, 0
+
+
+
+
+
+
+
+

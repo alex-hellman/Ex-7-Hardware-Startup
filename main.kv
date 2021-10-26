@@ -1,0 +1,90 @@
+<MainScreen>:
+    name: 'main'
+    #: import time __main__.time
+    first_button: first_button
+    counter_button: counter_button
+    motor_button: motor_button
+    motor_responder: motor_responder
+    image: image
+
+    FloatLayout:
+        size_hint: None, None
+
+    DPEAButton:
+        id: test_button
+        text: 'test'
+        size: 100, 100
+        x: root.width * 0.8
+        y: root.height * 0.5
+        color: 0, 1, 0, 1
+        on_press: root.pressed()
+
+    DPEAButton:
+        text: "test2"
+        size: 100, 100
+        x: root.width * 0.1
+        y: root.height * 0.5
+        color: 1, 0, 0, 1
+        on_press: root.pressed()
+
+    SelfUpdatingLabel:
+        id: time_label
+        size_hint: None, None
+        font_size: 30
+        update_property: time.now
+        update_property_parameters: None
+        center_x: root.width * 0.5
+        center_y: root.height * 0.45
+        color: 1, 1, 1, 1
+        bold: True
+        outline_width: self.font_size * 0.1
+        outline_color: 0, 0, 0
+
+    DPEAButton:
+        id: first_button
+        text: "On"
+        size: 100, 100
+        x: root.width * .45
+        y: root.height * .5
+        color: 1, 0, 1, 1
+        on_press: root.pressed()
+        on_press: root.pressed2()
+
+    DPEAButton:
+        id: counter_button
+        text: "0"
+        size: 100, 100
+        x: root.width * .1
+        y: root.width * .1
+        color: 1, 1, 1, 0
+        on_press: root.pressed()
+        on_press: root.counter()
+
+    DPEAButton:
+        id: motor_button
+        text: "Motor"
+        size: 100, 100
+        x: root.width * .1
+        y: root.width * .6
+        color: 1, 1, 1, 1
+        on_press: root.pressed()
+        on_press: root.motor()
+
+    DPEAButton:
+        id: motor_responder
+        text: "On"
+        size: 100, 100
+        x: root.width * .8
+        y: root.width * .6
+        color: 1, 0, 1, 0
+        on_press: root.pressed()
+
+    ImageButton
+        id: image
+        text: "Skipper"
+        size: 150, 150
+        x: root.width * .45
+        y: root.width * .1
+        source: 'skipper.jpg'
+        on_press: root.pressed()
+        on_press: root.move()

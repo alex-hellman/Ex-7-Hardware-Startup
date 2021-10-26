@@ -1,0 +1,28 @@
+<secondScreen>:
+    #: import time __main__.time
+    image: image
+    second_image: second_image
+    name: 'main'
+
+    FloatLayout:
+        size_hint: None, None
+
+    ImageButton
+        id: image
+        text: "Skipper"
+        size: 150, 150
+        x: root.width * .2
+        y: root.width * .1
+        source: 'skipper.jpg'
+        on_press: root.animation()
+
+    ImageButton
+        id: second_image
+        text: "Kowalski"
+        size: 300, 300
+        x: root.width * .5
+        y: root.width * .3
+        source: 'Kowalski.jpg'
+        on_press: root.moveback()
+
+
